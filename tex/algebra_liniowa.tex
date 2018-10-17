@@ -8,6 +8,11 @@
 \usepackage{booktabs}
 \usepackage{dsfont}
 \usepackage{pgfplots}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\lhead{Notatki: Algebra liniowa}
+\rhead{Adrian Startek}
 
 \pgfplotsset{compat=1.13}
 
@@ -176,12 +181,12 @@
             \end{axis}
         \end{tikzpicture}
     \end{center}
-    W interpretacji geometrycznej liczba sprzężona $\conj{z}$ jest odbiciem liczby $z$ względem osi rzędnych.
-    \paragraph{Postać trygonometryczna} Niech $z = a+bi$ będzie liczbą zespoloną.
+    W interpretacji geometrycznej liczba sprzężona $\conj{z}$ jest odbiciem liczby $z$ względem osi odciętych.
+    \paragraph{Postać trygonometryczna.} Niech $z = a+bi$ będzie liczbą zespoloną.
     \begin{definition}
         \textbf{Modułem} liczby zespolonej nazywamy liczbę
         \begin{equation*}
-            \mathopen|z\mathclose| = \sqrt{z\conj{z}} = \sqrt{a^2+b^2}
+            r = \mathopen|z\mathclose| = \sqrt{z\conj{z}} = \sqrt{a^2+b^2}
         \end{equation*}
     \end{definition}
     Moduł można interpretować jako długość odcinka pomiędzy początkiem układu współrzędnych a punktem reprezentującym liczbę zespoloną.
@@ -214,4 +219,46 @@
             \end{axis}
         \end{tikzpicture}
     \end{center}
+    Niech $\varphi$ będzie kątem pomiędzy dodatnią półosią rzeczywistą a odcinkiem łączącym początek układu współrzędnych a punktem reprezentującym liczbę zezpoloną. Zachodzi wtedy:
+    \begin{equation*}
+        r = \mathopen|z\mathclose|
+    \end{equation*}
+    \begin{equation*}
+        sin \varphi = \frac{b}{\mathopen|z\mathclose|} \Longrightarrow b = \mathopen|z\mathclose| sin \varphi
+    \end{equation*}
+    \begin{equation*}
+        cos \varphi = \frac{a}{\mathopen|z\mathclose|} \Longrightarrow a = \mathopen|z\mathclose| cos \varphi
+    \end{equation*}
+    Wynika z tego możliwość przedstawienia liczby zespolonej $z = a + bi$ w postaci:
+    \begin{equation*}
+        z = a + bi = \mathopen|z\mathclose| cos \varphi + i \mathopen|z\mathclose| sin \varphi = \mathopen|z\mathclose|(cos \varphi + i\, sin \varphi)
+    \end{equation*}
+    \begin{theorem}
+        Niech $z \in \mathds{C}$, $z = \mathopen|z\mathclose|(cos \varphi + i\, sin \varphi)$. Zachodzi:
+        \begin{equation*}
+            \forall_{n \in \mathds{N}} \, z^n = {\mathopen|z\mathclose|}^n (cos(n\varphi) + i\, sin(n\varphi))
+        \end{equation*}
+    \end{theorem}
+    \begin{theorem}
+        Niech $z \in \mathds{C}$, $z \neq (0,0)$, $z = \mathopen|z\mathclose|(cos\varphi + i\, sin\varphi)$.
+        Istnieje dokładnie $n$ pierwiastków $n$-tego stopnia z liczby $z$. $k$-ty pierwiastek dany jest wzorem:
+        \begin{equation*}
+            w_k = \sqrt[n]{\mathopen|z\mathclose|}\left(cos\frac{\varphi+2k\pi}{n} + i\, sin \frac{\varphi+2k\pi}{n}\right), k \in \langle0; n-1 \rangle, k \in \mathds{N}
+        \end{equation*}
+        \begin{proof}
+            Niech $w = \mathopen|w\mathclose|(cos \alpha + i\, sin \alpha)$ będzie pierwiastkiem $n$-tego stopnia z liczby $z$. Zatem:
+            \begin{equation*}
+                w^n = z
+            \end{equation*}
+            \begin{equation*}
+                w^n = {\mathopen|w\mathclose|}^n(cos\, n\alpha + i\, sin\, n\alpha) = \mathopen|z\mathclose|(cos\varphi + i\, sin\varphi)
+            \end{equation*}
+            \begin{equation*}
+                {\mathopen|w\mathclose|}^n = \mathopen|z\mathclose| \Longrightarrow \mathopen|w\mathclose| = \sqrt[n]{\mathopen|z\mathclose|}
+            \end{equation*}
+            \begin{equation*}
+                n\alpha = \varphi+2k\pi \Longrightarrow \alpha = \frac{\varphi+2k\pi}{n}
+            \end{equation*}
+        \end{proof}
+    \end{theorem}
 \end{document}
