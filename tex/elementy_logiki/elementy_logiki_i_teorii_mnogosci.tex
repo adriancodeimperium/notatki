@@ -1,0 +1,272 @@
+\section{Podstawowe definicje i oznaczenia}
+    \begin{definition}
+        Zdanie logiczne: zdanie, któremu można przyporządkować wartość logiczną "prawda"(1) lub "fałsz"(0).
+    \end{definition}
+    \begin{definition}
+        Tautologia: zdanie logiczne, które zawsze jest prawdziwe.
+    \end{definition}
+    \begin{definition}
+        Funkcja zdaniowa $\phi(x)$: wyrażenie, które po podstawieniu konkretnej wartości $x$ staje się zdaniem logicznym.
+    \end{definition}
+    \begin{definition}
+        Para uporządkowana (x,y): zbiór $\{\{x\},\{x,y\}\}$. Elementem pierwszym w parze jest ten, który jest elementem obu zbiorów, co jednoznacznie określa kolejność.
+    \end{definition}
+
+    \subsection{Zbiory liczbowe}
+        $\mathbb{N}$ - zbiór liczb naturalnych\\
+        $\mathbb{Z}$ - zbiór liczb całkowitych\\
+        $\mathbb{Q}$ - zbiór liczb wymiernych\\
+        $\mathbb{R}$ - zbiór liczb rzeczwistych
+
+        \paragraph{} Fakt należenia elementu x do zbioru A oznacza się przez $x \in A$. Analogicznie, "x nie należy do zbioru A" ocznacza się $x \notin A$.
+        \paragraph{} Zbiór można definiować podając jego elementy wprost: $A = \{a, b, c\}$ lub zadając warunek na przynależność elementów do zbioru: $A = \{x \in X: \phi (x)\}$. 
+
+    \subsection{Kwantyfikatory}
+        \paragraph{Kwantyfikator ogólny.} Wyrażenie "dla każdego x należącego do X zachodzi $\phi(x)$" oznacza się: $\forall_{x \in X} \, \phi(x)$
+        \paragraph{Kwantyfikator szczególny.} Wyrażenie "istnieje x należący do X, dla którego zachodzi $\phi(x)$" oznacza się: $\exists_{x \in X} \, \phi(x)$
+        \paragraph{Zaprzeczenia kwantyfikatorów.} Zachodzi:
+        \begin{equation*}
+            \neg [\,\forall_{x \in \mathbb{R}} \, \phi(x)\,] \Leftrightarrow \exists_{x \in \mathbb{R}} \, \neg \phi(x)
+        \end{equation*}
+        \begin{equation*}
+            \neg [\,\exists_{x \in \mathbb{R}} \, \phi(x)\,] \Leftrightarrow \forall_{x \in \mathbb{R}} \, \neg \phi(x)
+        \end{equation*}
+        \begin{equation*}
+            \neg [\,\forall_{x \in \mathbb{R}} \, \phi(x) \vee \psi(x)\,] \Leftrightarrow \exists_{x \in \mathbb{R}} \, \neg \phi(x) \wedge \neg \psi(x)
+        \end{equation*}
+        \begin{equation*}
+            \neg [\,\exists_{x \in \mathbb{R}} \, \phi(x) \wedge \psi(x)\,] \Leftrightarrow \forall_{x \in \mathbb{R}} \, \neg \phi(x) \vee \neg \psi(x)
+        \end{equation*}
+
+\section{Rachunek zdań logicznych}
+    \subsection{Ważniejsze operacje na zdaniach}
+        \paragraph{Negacja}
+        Wartością negacji zdania logicznego jest wartość odwrotna do wartości tego zdania.
+        \begin{table}[h!]
+            \begin{center}
+                \caption{Negacja}
+                \label{tab:tabela1}
+                \begin{tabular}{c|c}
+                    \textbf{$p$} & \textbf{$\neg p$} \\
+                    \midrule
+                    0 & 1\\
+                    1 & 0 \\
+                    \bottomrule
+                \end{tabular}
+            \end{center}
+        \end{table}
+
+        \paragraph{Alternatywa}
+        Alternatywa przyjmuje wartość "prawda", jeśli co najmniej jedno ze zdań jest prawdziwe.
+        \begin{table}[h!]
+            \begin{center}
+                \caption{Alternatywa}
+                \label{tab:tabela2}
+                \begin{tabular}{c|c|c}
+                    \textbf{$p$} & \textbf{$q$} & \textbf{$p \vee q$} \\
+                    \midrule
+                    0 & 0 & 0\\
+                    0 & 1 & 1\\
+                    1 & 0 & 1\\
+                    1 & 1 & 1\\
+                    \bottomrule
+                \end{tabular}
+            \end{center}
+        \end{table}
+
+        \paragraph{Koniunkcja}
+        Koniunkcja przyjmuje wartość "prawda", tylko jeśli oba zdania są prawdziwe.
+        \begin{table}[h!]
+            \begin{center}
+                \caption{Koniunkcja}
+                \label{tab:tabela3}
+                \begin{tabular}{c|c|c}
+                    \textbf{$p$} & \textbf{$q$} & \textbf{$p \wedge q$} \\
+                    \midrule
+                    0 & 0 & 0\\
+                    0 & 1 & 0\\
+                    1 & 0 & 0\\
+                    1 & 1 & 1\\
+                    \bottomrule
+                \end{tabular}
+            \end{center}
+        \end{table}
+
+        \paragraph{Implikacja}
+        Implikacja ($p \Longrightarrow q$) jest prawdziwa, jeśli zarówno poprzednik ($p$) jak i następnik ($q$) są prawdziwe lub \textbf{poprzednik jest fałszywy (z fałszu wynika wszystko)}.
+        \begin{table}[h!]
+            \begin{center}
+                \caption{Implikacja}
+                \label{tab:tabela4}
+                \begin{tabular}{c|c|c}
+                    \textbf{$p$} & \textbf{$q$} & \textbf{$p \Longrightarrow q$} \\
+                    \midrule
+                    0 & 0 & 1\\
+                    0 & 1 & 1\\
+                    1 & 0 & 0\\
+                    1 & 1 & 1\\
+                    \bottomrule
+                \end{tabular}
+            \end{center}
+        \end{table}
+        
+        \paragraph{Równoważność}
+        Równoważność przyjmuje wartość "prawda" jeśli oba zdania mają tą samą wartość.
+        \begin{table}[h!]
+            \begin{center}
+                \caption{Równoważność}
+                \label{tab:tabela5}
+                \begin{tabular}{c|c|c}
+                    \textbf{$p$} & \textbf{$q$} & \textbf{$p \Leftrightarrow q$} \\
+                    \midrule
+                    0 & 0 & 1\\
+                    0 & 1 & 0\\
+                    1 & 0 & 0\\
+                    1 & 1 & 1\\
+                    \bottomrule
+                \end{tabular}
+            \end{center}
+        \end{table}
+        
+        \paragraph{Kreska Sheffera (NAND)}
+        Zaprzeczenie koniunkcji.
+        \begin{table}[h!]
+            \begin{center}
+                \caption{NAND}
+                \label{tab:tabela6}
+                \begin{tabular}{c|c|c}
+                    \textbf{$p$} & \textbf{$q$} & \textbf{$p \mid q$} \\
+                    \midrule
+                    0 & 0 & 1\\
+                    0 & 1 & 1\\
+                    1 & 0 & 1\\
+                    1 & 1 & 0\\
+                    \bottomrule
+                \end{tabular}
+            \end{center}
+        \end{table}
+        
+        \paragraph{NOR}
+        Zaprzeczenie alternatywy. 
+        \begin{table}[h!]
+            \begin{center}
+                \caption{NOR}
+                \label{tab:tabela7}
+                \begin{tabular}{c|c|c}
+                    \textbf{$p$} & \textbf{$q$} & \textbf{$p NOR q$} \\
+                    \midrule
+                    0 & 0 & 1\\
+                    0 & 1 & 0\\
+                    1 & 0 & 0\\
+                    1 & 1 & 0\\
+                    \bottomrule
+                \end{tabular}
+            \end{center}
+        \end{table}
+        
+        \begin{theorem}
+            Za pomocą \textbf{NAND} lub \textbf{NOR} można wyrazić wszystkie inne funktory.
+        \end{theorem}
+    
+    \subsection{Ważniejsze tautologie}
+        \begin{equation*}
+            \tag{prawo tożsamości}
+            p \Longrightarrow p
+        \end{equation*}
+        \begin{equation*}
+            \tag{prawo symplifikacji}
+            p \Longrightarrow (q \Longrightarrow p)
+        \end{equation*}
+        \begin{equation*}
+            \tag{prawo podwójnej negacji}
+            p \Leftrightarrow \neg(\neg p)
+        \end{equation*}
+        \begin{equation*}
+            \tag{prawo wyłączonego środka}
+            p \vee \neg p\end
+        {equation*}
+        \begin{equation*}
+            (\neg p \Longrightarrow p) \Longrightarrow p
+        \end{equation*}
+        \begin{equation*}
+            \tag{prawo Dunsa Szkota}
+            \neg p \Longrightarrow (p \Longrightarrow q)
+        \end{equation*}
+        \begin{equation*}
+            \tag{prawo De Morgana}
+            \neg (p \vee q) \Leftrightarrow (\neg p) \wedge (\neg q)
+        \end{equation*}
+        \begin{equation*}
+            \tag{prawo De Morgana}
+            \neg (p \wedge q) \Leftrightarrow (\neg p) \vee (\neg q)
+        \end{equation*}
+        \begin{equation*}
+            \neg(p \Longrightarrow q) \Leftrightarrow p \wedge (\neg q)
+        \end{equation*}
+        \begin{equation*}
+            \neg(p \Leftrightarrow q) \Leftrightarrow (p \wedge \neg q) \vee (\neg p \wedge q)
+        \end{equation*}
+
+\section{Rachunek zbiorów}
+    \subsection{Operacje i zależności}
+        \paragraph{Zawieranie.} Zbiór A zawiera się w zbiorze B (A jest podzbiorem B), ozn. $A \subset B$, jeśli każdy element zbioru A jest również elementem zbioru B:
+        \begin{equation*}
+            A \subset B \Leftrightarrow \forall_{x\in A} \,  x\in B
+        \end{equation*}
+        
+        \paragraph{Równość.} Zbiory A i B są równe, jeśli są one nawzajem swoimi podzbiorami:
+        \begin{equation*}
+            A = B \Leftrightarrow A \subset B \wedge B \subset A
+        \end{equation*}
+
+        \paragraph{Działania na zbiorach.} Definiuje się działania:
+        \begin{equation}
+            \tag{Suma zbiorów}
+            A \cup B = \{\,x: x \in A \vee x \in B\,\}
+        \end{equation}
+        \begin{equation*}
+            \tag{Iloczyn zbiorów}
+            A \cap B = \{\,x: x \in A \wedge x \in B\,\}
+        \end{equation*}
+        \begin{equation*}
+            \tag{Różnica zbiorów}
+            A \setminus B = \{\,x: x \in A \wedge x \notin B\,\}
+        \end{equation*}
+        \begin{equation*}
+            \tag{Iloczyn kartezjański}
+            A \times B = \{\,(a,b): a \in A, b \in B\,\}
+        \end{equation*}
+        
+        \paragraph{Dopełnienie zbioru.}
+        \begin{definition}
+            Dopełnieniem zbioru $A \subset C$ do zbioru C nazywa się zbiór wszystkich elementów należących do C, które nie należą do A:
+            \begin{equation*}
+                \setminus A = \{\,x \in C: x \notin A\,\}
+            \end{equation*}
+        \end{definition}
+
+        \paragraph{Własności dopełnienia.}
+        Niech $A \subset X$, $B \subset X$. Wtedy:
+        \begin{equation*}
+            \setminus(\,A \cup B\,) = (\,\setminus A\,) \cap (\,\setminus B\,)
+        \end{equation*}
+        \begin{equation*}
+            \setminus(\,A \cap B\,) = (\,\setminus A\,) \cup (\,\setminus B\,)
+        \end{equation*}
+        \begin{equation*}
+            \setminus(\,\setminus A\,) = A
+        \end{equation*}
+
+    \subsection{Relacje.}
+    \begin{definition}
+        Relacją nazywa się dowolny podzbiór iloczynu kartezjańskiego skończonej liczby zbiorów.
+    \end{definition}
+
+Niech R będzie relacją zadaną na $X \times X$ (tj. R jest relacją dwuargumentową, która przyjmuje za argumenty elementy X). Dodatkowo, niech $xRy$ oznacza wyrażenie "pomiędzy x a y zachodzi relacja R". Wtedy:
+\paragraph{R jest relacją zwrotną} $\Leftrightarrow \forall_{x \in X} \, xRx$
+\paragraph{R jest relacją przeciwzwrotną} $\Leftrightarrow \forall_{x \in X} \, \neg (\,xRx\,)$
+\paragraph{R jest relacją symetryczną} $\Leftrightarrow \forall_{x,y \in X} \, (\,xRy \Longrightarrow yRx\,)$
+\paragraph{R jest relacją słabo antysymetryczną} $\Leftrightarrow \forall_{x,y \in X} \, (\,xRy \wedge yRx \Longrightarrow x = y\,)$
+\paragraph{R jest relacją antysymetryczną} $\Leftrightarrow \forall_{x,y \in X} \, (\,xRy \Longrightarrow \neg(\,yRx\,)\,)$
+\paragraph{R jest relacją przechodnią} $\Leftrightarrow \forall_{x,y,z \in X} \, (\,xRy \wedge yRz \Longrightarrow xRz\,)$
+\paragraph{R jest relacją spójną} $\Leftrightarrow \forall_{x,y \in X} \, (\,xRy \vee yRx \vee y = x\,)$

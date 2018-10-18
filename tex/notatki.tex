@@ -1,0 +1,40 @@
+\documentclass[fleqn]{book}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{dsfont}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+
+\pgfplotsset{compat=1.15}
+
+\newcommand*\conj[1]{\bar{#1}}
+\newcommand*\abs[1]{\left|#1\right|}
+
+\newtheorem{definition}{Definicja}[section]
+\newtheorem{theorem}{Twierdzenie}[section]
+
+\pagestyle{fancy}
+\lhead{Notatki - Matematyka}
+\rhead{Adrian Startek}
+
+\title{Notatki - Matematyka}
+\author{Adrian Startek}
+\date{Studia I stopnia}
+
+\begin{document}
+    \frontmatter
+    \maketitle
+    \tableofcontents
+    \mainmatter
+    \part{Semestr I}
+    \chapter{Elementy logiki i teorii mnogości}
+    \input{./elementy_logiki/elementy_logiki_i_teorii_mnogosci.tex}
+    \chapter{Algebra liniowa}
+    \input{./algebra_liniowa/algebra_liniowa.tex}
+    \chapter{Analiza matematyczna}
+\end{document}

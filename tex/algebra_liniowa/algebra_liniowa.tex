@@ -1,0 +1,231 @@
+\section{Działanie, grupa, ciało}
+\begin{definition}
+    Niech G będzie dowolnym zbiorem. \textbf{Działaniem} (dwuargumentowym) w zbiorze G nazywamy dowolne odwzorowanie $f: G \times G \rightarrow G$.
+\end{definition}
+
+\begin{definition}
+    Zbiór G z określonym działaniem $\circ$ - parę $(\,G, \circ\,)$ nazwiemy grupą, jeśli spełnione są następujące warunki:
+    \begin{enumerate}
+        \item Działanie $\circ$ jest łączne: 
+            \begin{equation*}
+                \forall_{a,b,c \in G} \, [\,(\,a \circ b\,) \circ c = a \circ (\,b \circ c\,)\,]
+            \end{equation*}
+        \item Istnieje element neutralny e:
+            \begin{equation*}
+                \exists_{e \in G} \, \forall_{a \in G} \, (\,a \circ e = e \circ a = a\,)
+            \end{equation*}
+        \item Dla każdego elementu a istnieje element odwrotny $a^{-1}$:
+            \begin{equation*}
+                \forall_{a \in G} \, \exists_{a^{-1} \in G} \, (\,a \circ a^{-1} = a^{-1} \circ a = e\,)
+            \end{equation*}
+    \end{enumerate}
+    Jeżeli działanie $\circ$ jest dodatkowo przemienne, to $(\, G, \circ\,)$ nazwiemy \textbf{grupą przemienną} lub \textbf{Abelową} (Niels Henrik Abel - matematyk norweski). Opuszczając natomiast warunek 3 (istnienie elementu odwrotnego) otrzymamy definicję struktury ogólniejszej, zwanej \textbf{półgrupą}. 
+\end{definition}
+
+\begin{theorem}
+    Jeśli $(\,G, \circ \,)$ jest grupą, to isteniej dokładnie 1 element neutralny.
+\end{theorem}
+
+\begin{proof}
+    Załóżmy, że $e, e' \in G$ są elementami neutralnymi. Wtedy:
+    \begin{equation*}
+        e = e \circ e' = e' \circ e = e'
+    \end{equation*}
+    Co prowadzi do sprzeczności.
+\end{proof}
+
+\begin{theorem}
+    Jeśli g i h są elementami grupy spełniającymi $g \circ h = e$, to są one wzajemnie odwrotne.
+\end{theorem}
+
+\begin{theorem}
+    Jeśli $(\, G, \circ\, )$ jest grupą oraz $a \in G$ to istnieje dokładnie jeden element odwrotny $a^{-1}$.
+\end{theorem}
+
+\begin{definition}
+    Zbiór G z określonymi działaniami "mnożenia" $\odot$ i "dodawania" $\oplus$ - trójkę $(\, G, \odot, \oplus\,)$ - nazywamy ciałem, jeżeli spełnione są warunki:
+    \begin{enumerate}
+        \item Oba działania są przemienne:
+            \begin{equation*}
+                \forall_{a,b \in G} \, (\,a \oplus b = b \oplus a\,)
+            \end{equation*}
+            \begin{equation*}
+                \forall_{a,b \in G} \, (\,a \odot b = b \odot a\,)
+            \end{equation*}
+        \item Oba działania są łączne:
+            \begin{equation*}
+                \forall_{a,b,c \in G} \, [\, (\,a \oplus b\,) \oplus c = a \oplus (\,b \oplus c\,)\,]
+            \end{equation*}
+            \begin{equation*}
+                \forall_{a,b,c \in G} \, [\, (\,a \odot b\,) \odot c = a \odot (\,b \odot c\,)\,]
+            \end{equation*}
+        \item Istnieje element neutralny dodawania ("zero" $\mathds{O}$) oraz element neutralny mnożenia ("jeden" $\mathds{1}$)
+        \item Dla każdego elementu zbioru G istnieje element odwrotny względem dodawania:
+            \begin{equation*}
+                \forall_{a \in G} \, (\, a \oplus a^{-1} = a^{-1} \oplus a = \mathds{O}\,)
+            \end{equation*}
+            Dla każdego elementu, poza elementem neutralnym dodawania, istnieje element odwrotny względem mnożenia:
+            \begin{equation*}
+                \forall_{a \in G, a \neq \mathds{O}} \, (\, a \odot a^{-1} = a^{-1} \odot a = \mathds{1}\,)
+            \end{equation*}
+        \item Zachodzi rozdzielność mnożenia względem dodawania:
+            \begin{equation*}
+                \forall_{a,b,c \in G} \, [\, a \odot (\, b \oplus c\,) = (\, a \odot b \,) \oplus (\, a \odot c\, )\,]
+            \end{equation*}
+        \item Elementy neutralne działań są od siebie różne:
+            \begin{equation*}
+                \mathds{O} \neq \mathds{1}
+            \end{equation*}
+    \end{enumerate}
+\end{definition}
+\subsection{Liczby zespolone}
+\begin{definition}
+    Niech $\mathds{C} := \mathds{R} \times \mathds{R}$. Określmy działania $\oplus ,\odot$:
+    \begin{equation*}
+        \oplus : (\,a,b\,)\oplus(\,c,d\,) = (\,a+c, b+d\,)
+    \end{equation*}
+    \begin{equation*}
+        \odot : (\,a,b\,)\odot(\,c,d\,) = (\, ac-bd, ad+bc\,)
+    \end{equation*}
+    Trójkę $(\,G,\oplus,\odot\,)$ nazywamy ciałem liczb zespolonych.
+\end{definition}
+
+\paragraph{Postać kartezjańska.} Liczby zespolone posiadają naturalną interpretację geometryczną. Są one parami (uporządkowanymi) liczb rzeczywistych, więc można im przypisać punkty na płaszczyźnie. Liczbie $z = (\,a,b\,), z \in \mathds{C}$ odpowiada punkt o odciętej a i rzędnej b. Płaszczyznę, na której w ten sposób przedstawiamy liczby zespolone nazywamy \textbf{płaszczyzną Gaussa}.
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+                axis lines=middle,
+                axis equal, 
+                xmin=-4, 
+                ymin=-4, 
+                xmax=4, 
+                ymax=4,
+                xtick distance = 1,
+                ytick distance = 1
+            ]
+            \addplot+ [black, nodes near coords, only marks, point meta=explicit symbolic] table [meta=label] {
+                x   y   label
+                2   3   z=(2,3)
+            };
+            \draw [dotted] (2,3) -- (2,0);
+            \draw [dotted] (0,3) -- (2,3);
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+\paragraph{Postać kanoniczna.} Podzbiór ciała $\mathds{C}$ złożony z liczb postaci $(\,x,0\,), x \in \mathds{R}$, również jest ciałem. Odwzorowanie $x \rightarrow (\,x,0\,)$ z $\mathds{R}$ w rozważany podzbiór $\mathds{C}$ zadaje izomorfizm ciał. Pozwala to na wprowadzenie utożsamienia $(\,x,0\,) \equiv x$. Wprowadźmy oznaczenie $i := (\,0,1\,)$ i nazwijmy ten element \textbf{jednostką urojoną}. Łatwo sprawdzić, że:
+\begin{equation*}
+    i^2 = (\,-1,0\,) \equiv -1
+\end{equation*}
+Dowolną liczbę zespoloną $z = (\,a,b\,)$ można przedstawić w postaci:
+\begin{equation*}
+    z = (\,a,b\,) = (\,a,0\,) + (\,b,0\,)(\,0,1\,) \equiv a+bi
+\end{equation*}
+Zapis liczby zespolonej z w postaci $z = a+bi$ nazywamy \textbf{postacią kanoniczną}. Liczbę $a in \mathds{R}$ nazywamy \textbf{częścią rzeczywistą} liczby zespolonej i oznaczamy $\Re{z}$ (lub $Re(z)$). Analogicznie, liczbę $b \in \mathds{R}$ nazywamy \textbf{częścią urojoną} i oznaczamy $\Im{z}$ (lub $Im(z)$).
+\begin{definition}
+    \textbf{Liczbą sprzężoną} do liczby $z = a+bi$ nazywamy liczbę
+    \begin{equation*}
+        \conj{z} = a-bi
+    \end{equation*}
+\end{definition}
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+                axis lines=middle,
+                axis equal, 
+                xmin=-4, 
+                ymin=-4, 
+                xmax=4, 
+                ymax=4,
+                xtick distance = 1,
+                ytick distance = 1
+            ]
+            \addplot+ [black, nodes near coords, only marks, point meta=explicit symbolic] table [meta=label] {
+                x   y   label
+                2   3   $z=(2,3)$
+                2   -3  $\conj{z}=(2,-3)$
+            };
+            \draw [dotted] (0,0) -- (2,3);
+            \draw [dotted] (0,0) -- (2,-3);
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+W interpretacji geometrycznej liczba sprzężona $\conj{z}$ jest odbiciem liczby $z$ względem osi odciętych.
+\paragraph{Postać trygonometryczna.} Niech $z = a+bi$ będzie liczbą zespoloną.
+\begin{definition}
+    \textbf{Modułem} liczby zespolonej nazywamy liczbę
+    \begin{equation*}
+        r = \mathopen|z\mathclose| = \sqrt{z\conj{z}} = \sqrt{a^2+b^2}
+    \end{equation*}
+\end{definition}
+Moduł można interpretować jako długość odcinka pomiędzy początkiem układu współrzędnych a punktem reprezentującym liczbę zespoloną.
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+                axis lines=middle,
+                axis equal, 
+                xmin=-4, 
+                ymin=-4, 
+                xmax=4, 
+                ymax=4,
+                xtick = {0},
+                ytick = {0},
+                extra x ticks = {2},
+                extra x tick labels = {a},
+                extra y ticks = {3},
+                extra y tick labels = {b}
+            ]
+            \addplot+ [black, nodes near coords, only marks, point meta=explicit symbolic] table [meta=label] {
+                x   y   label
+                2   3   $(a,b)$
+            };
+            \addplot [blue, domain=0:2] {1.5*x}
+                node [pos=0.5, sloped, style={yshift=8pt}] {r}
+            ;
+            \draw [dotted] (0,3) -- (2,3);
+            \draw [dotted] (2,0) -- (2,3);
+            % \draw [solid] (0,0) -- (2,3);
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+Niech $\varphi$ będzie kątem pomiędzy dodatnią półosią rzeczywistą a odcinkiem łączącym początek układu współrzędnych a punktem reprezentującym liczbę zezpoloną. Zachodzi wtedy:
+\begin{equation*}
+    r = \mathopen|z\mathclose|
+\end{equation*}
+\begin{equation*}
+    sin \varphi = \frac{b}{\mathopen|z\mathclose|} \Longrightarrow b = \mathopen|z\mathclose| sin \varphi
+\end{equation*}
+\begin{equation*}
+    cos \varphi = \frac{a}{\mathopen|z\mathclose|} \Longrightarrow a = \mathopen|z\mathclose| cos \varphi
+\end{equation*}
+Wynika z tego możliwość przedstawienia liczby zespolonej $z = a + bi$ w postaci:
+\begin{equation*}
+    z = a + bi = \mathopen|z\mathclose| cos \varphi + i \mathopen|z\mathclose| sin \varphi = \mathopen|z\mathclose|(cos \varphi + i\, sin \varphi)
+\end{equation*}
+\begin{theorem}
+    Niech $z \in \mathds{C}$, $z = \mathopen|z\mathclose|(cos \varphi + i\, sin \varphi)$. Zachodzi:
+    \begin{equation*}
+        \forall_{n \in \mathds{N}} \, z^n = {\mathopen|z\mathclose|}^n (cos(n\varphi) + i\, sin(n\varphi))
+    \end{equation*}
+\end{theorem}
+\begin{theorem}
+    Niech $z \in \mathds{C}$, $z \neq (0,0)$, $z = \mathopen|z\mathclose|(cos\varphi + i\, sin\varphi)$.
+    Istnieje dokładnie $n$ pierwiastków $n$-tego stopnia z liczby $z$. $k$-ty pierwiastek dany jest wzorem:
+    \begin{equation*}
+        w_k = \sqrt[n]{\mathopen|z\mathclose|}\left(cos\frac{\varphi+2k\pi}{n} + i\, sin \frac{\varphi+2k\pi}{n}\right), k \in \langle0; n-1 \rangle, k \in \mathds{N}
+    \end{equation*}
+    \begin{proof}
+        Niech $w = \mathopen|w\mathclose|(cos \alpha + i\, sin \alpha)$ będzie pierwiastkiem $n$-tego stopnia z liczby $z$. Zatem:
+        \begin{equation*}
+            w^n = z
+        \end{equation*}
+        \begin{equation*}
+            w^n = {\mathopen|w\mathclose|}^n(cos\, n\alpha + i\, sin\, n\alpha) = \mathopen|z\mathclose|(cos\varphi + i\, sin\varphi)
+        \end{equation*}
+        \begin{equation*}
+            {\mathopen|w\mathclose|}^n = \mathopen|z\mathclose| \Longrightarrow \mathopen|w\mathclose| = \sqrt[n]{\mathopen|z\mathclose|}
+        \end{equation*}
+        \begin{equation*}
+            n\alpha = \varphi+2k\pi \Longrightarrow \alpha = \frac{\varphi+2k\pi}{n}
+        \end{equation*}
+    \end{proof}
+\end{theorem}
