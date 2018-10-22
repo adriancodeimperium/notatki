@@ -2,3 +2,8 @@
 *.out
 *.aux
 *.toc
+*.idx
+*.lot
+*.lof
+*.ilg
+*.ind

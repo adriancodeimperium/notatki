@@ -90,8 +90,12 @@
     Trójkę $(\,G,\oplus,\odot\,)$ nazywamy ciałem liczb zespolonych.
 \end{definition}
 
-\paragraph{Postać kartezjańska.} Liczby zespolone posiadają naturalną interpretację geometryczną. Są one parami (uporządkowanymi) liczb rzeczywistych, więc można im przypisać punkty na płaszczyźnie. Liczbie $z = (\,a,b\,), z \in \mathds{C}$ odpowiada punkt o odciętej a i rzędnej b. Płaszczyznę, na której w ten sposób przedstawiamy liczby zespolone nazywamy \textbf{płaszczyzną Gaussa}.
-\begin{center}
+\paragraph{Postać kartezjańska.} Liczby zespolone posiadają naturalną interpretację geometryczną. Są one parami (uporządkowanymi) liczb rzeczywistych, więc można im przypisać punkty na płaszczyźnie. Liczbie $z = (\,a,b\,), z \in \mathds{C}$ odpowiada punkt o odciętej a i rzędnej b (rysunek \ref{fig:lba_zespolona}). Płaszczyznę, na której w ten sposób przedstawiamy liczby zespolone nazywamy \textbf{płaszczyzną Gaussa}.
+\begin{figure}[htbp!]
+    \centering
+    \caption{Liczba zespolona jako punkt na płaszczyźnie}
+    \label{fig:lba_zespolona}
+    \vspace{3mm}
     \begin{tikzpicture}
         \begin{axis}[
                 axis lines=middle,
@@ -111,7 +115,7 @@
             \draw [dotted] (0,3) -- (2,3);
         \end{axis}
     \end{tikzpicture}
-\end{center}
+\end{figure}
 \paragraph{Postać kanoniczna.} Podzbiór ciała $\mathds{C}$ złożony z liczb postaci $(\,x,0\,), x \in \mathds{R}$, również jest ciałem. Odwzorowanie $x \rightarrow (\,x,0\,)$ z $\mathds{R}$ w rozważany podzbiór $\mathds{C}$ zadaje izomorfizm ciał. Pozwala to na wprowadzenie utożsamienia $(\,x,0\,) \equiv x$. Wprowadźmy oznaczenie $i := (\,0,1\,)$ i nazwijmy ten element \textbf{jednostką urojoną}. Łatwo sprawdzić, że:
 \begin{equation*}
     i^2 = (\,-1,0\,) \equiv -1
@@ -127,7 +131,11 @@ Zapis liczby zespolonej z w postaci $z = a+bi$ nazywamy \textbf{postacią kanon
         \conj{z} = a-bi
     \end{equation*}
 \end{definition}
-\begin{center}
+\begin{figure}[htbp!]
+    \centering
+    \caption{Interpretacja geometryczna liczby sprzężonej}
+    \label{fig:lba_sprzezona}
+    \vspace{3mm}
     \begin{tikzpicture}
         \begin{axis}[
                 axis lines=middle,
@@ -148,17 +156,21 @@ Zapis liczby zespolonej z w postaci $z = a+bi$ nazywamy \textbf{postacią kanon
             \draw [dotted] (0,0) -- (2,-3);
         \end{axis}
     \end{tikzpicture}
-\end{center}
-W interpretacji geometrycznej liczba sprzężona $\conj{z}$ jest odbiciem liczby $z$ względem osi odciętych.
+\end{figure}
+W interpretacji geometrycznej liczba sprzężona $\conj{z}$ jest odbiciem liczby $z$ względem osi odciętych (rysunek \ref{fig:lba_sprzezona}).
 \paragraph{Postać trygonometryczna.} Niech $z = a+bi$ będzie liczbą zespoloną.
 \begin{definition}
-    \textbf{Modułem} liczby zespolonej nazywamy liczbę
+    \textbf{Modułem} liczby zespolonej $z$ nazywamy liczbę
     \begin{equation*}
         r = \mathopen|z\mathclose| = \sqrt{z\conj{z}} = \sqrt{a^2+b^2}
     \end{equation*}
 \end{definition}
-Moduł można interpretować jako długość odcinka pomiędzy początkiem układu współrzędnych a punktem reprezentującym liczbę zespoloną.
-\begin{center}
+Moduł można interpretować jako długość odcinka pomiędzy początkiem układu współrzędnych a punktem reprezentującym liczbę zespoloną (rysunek \ref{fig:modul_lby_zespolonej}).
+\begin{figure}[tbp!]
+    \centering
+    \caption{Moduł liczby zespolonej}
+    \label{fig:modul_lby_zespolonej}
+    \vspace{3mm}
     \begin{tikzpicture}
         \begin{axis}[
                 axis lines=middle,
@@ -183,10 +195,9 @@ Moduł można interpretować jako długość odcinka pomiędzy początkiem ukła
             ;
             \draw [dotted] (0,3) -- (2,3);
             \draw [dotted] (2,0) -- (2,3);
-            % \draw [solid] (0,0) -- (2,3);
         \end{axis}
     \end{tikzpicture}
-\end{center}
+\end{figure}
 Niech $\varphi$ będzie kątem pomiędzy dodatnią półosią rzeczywistą a odcinkiem łączącym początek układu współrzędnych a punktem reprezentującym liczbę zezpoloną. Zachodzi wtedy:
 \begin{equation*}
     r = \mathopen|z\mathclose|

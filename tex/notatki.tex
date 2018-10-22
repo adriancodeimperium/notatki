@@ -10,6 +10,10 @@
 \usepackage{pgfplots}
 \usepackage{fancyhdr}
 \usepackage{bookmark}
+\usepackage{makeidx}
+\usepackage{multirow}
+\usepackage{gensymb}
+\makeindex
 
 \pgfplotsset{compat=1.13}
 
@@ -38,4 +42,8 @@
     \chapter{Algebra liniowa}
     \input{./algebra_liniowa/algebra_liniowa.tex}
     \chapter{Analiza matematyczna}
+    \appendix
+    \chapter{Przegląd ważniejszych funckji}
+    \input{./dodatki/przeglad_funckji.tex}
+    \printindex
 \end{document}
