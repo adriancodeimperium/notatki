@@ -240,3 +240,183 @@ Wynika z tego możliwość przedstawienia liczby zespolonej $z = a + bi$ w post
         \end{equation*}
     \end{proof}
 \end{theorem}
+\section{Przestrzenie liniowe}
+\begin{definition}
+    Niech będzie dane ciało K oraz niepusty zbiór V z określonymi dwoma działaniami:
+    \begin{equation*}
+        \tag{dodawanie}
+        \oplus: V \times V \ni (\,x,y\,) \rightarrow x \oplus y \in V
+    \end{equation*}
+    \begin{equation*}
+        \tag{mnożenie przez element ciała}
+        \odot: K \times V \ni (\,\lambda,x\,) \rightarrow \lambda \odot x \in V
+    \end{equation*}
+    Strukturę $(\,V,K,\oplus,\odot)$ nazwiemy \textbf{przestrzenią wektorową} (lub \textbf{liniową}) nad ciałem K, jeśli spełnione są warunki:
+    \begin{enumerate}
+        \item $(\,V,\oplus\,)$ jest grupą abelową
+        \item $\forall_{x \in V}$:
+            \begin{equation*}
+                1\odot x = x
+            \end{equation*}
+        \item $\forall_{x \in V}\,\forall_{\alpha,\beta \in K}$:
+            \begin{equation*}
+                \tag{prawo łączności}
+                \alpha\odot(\beta\odot x) = (\alpha\beta)\odot x
+            \end{equation*}
+        \item $\forall_{x,y \in V}\, \forall_{\alpha,\beta \in K}$:
+            \begin{equation*}
+                \tag{rozdzielność dodawania względem mnożenia}
+                (\alpha + \beta)\odot x = \alpha \odot x \oplus \beta \odot x
+            \end{equation*}
+        \item $\forall_{x,y \in V}\, \forall_{\alpha \in K}$:
+            \begin{equation*}
+                \tag{rozdzielność mnożenia względem dodawania}
+                \alpha\odot(x \oplus y) = \alpha\odot x \oplus \alpha\odot y
+            \end{equation*}
+    \end{enumerate}
+    Elementy zbioru V nazywamy \textbf{wektorami}, a ciała K \textbf{skalarami}.
+\end{definition}
+\begin{theorem}
+    Jeśli V jest przestrzenią liniową nad K, to dla każdego $v \in V, \, \alpha \in K$ zachodzi:
+    \begin{enumerate}
+        \item $ 0\odot v = \mathds{O}$
+        \item $\alpha \odot \mathds{O} = \mathds{O}$
+        \item $\alpha \odot v = \mathds{O} \Longrightarrow \alpha = 0 \vee v = \mathds{O}$
+    \end{enumerate}
+    \begin{proof} Kolejno:
+        \begin{enumerate}
+            \item
+                \begin{equation*}
+                    1\odot v = (1 + 0) \odot v = 1\odot v \oplus 0 \odot v
+                \end{equation*}
+                \begin{equation*}
+                    1\odot v - 1\odot v = (1\odot v - 1\odot v) \oplus 0 \odot v
+                \end{equation*}
+                \begin{equation*}
+                    \mathds{O} = 0 \odot v
+                \end{equation*}
+            \item
+                \begin{equation*}
+                    \alpha\odot\mathds{O} = \alpha(\mathds{O}\oplus\mathds{O}) = \alpha\odot\mathds{O}\oplus\alpha\odot\mathds{O}
+                \end{equation*}
+                \begin{equation*}
+                    \alpha\odot\mathds{O}-\alpha\odot\mathds{O} = (\alpha\odot\mathds{O}-\alpha\odot\mathds{O})\oplus\alpha\odot\mathds{O}
+                \end{equation*}
+                \begin{equation*}
+                    \mathds{O} = \alpha\odot\mathds{O}
+                \end{equation*}
+            \item
+                \begin{equation*}
+                    \alpha\odot v = \mathds{O}
+                \end{equation*}
+                Wystarczy pokazać, że jeśli  $\alpha\neq 0$, to $v = \mathds{O}$
+                \begin{equation*}
+                    \exists_{\alpha^{-1} \in K}\, \alpha\alpha^{-1} = 1
+                \end{equation*}
+                \begin{equation*}
+                    \alpha\odot v = \mathds{O}
+                \end{equation*}
+                \begin{equation*}
+                    \alpha\alpha^{-1}\odot v = \alpha^{-1}\odot\mathds{O}
+                \end{equation*}
+                \begin{equation*}
+                    1\odot v = \mathds{O}
+                \end{equation*}
+                \begin{equation*}
+                    v = \mathds{O}
+                \end{equation*}
+        \end{enumerate}
+    \end{proof}
+\end{theorem}
+\begin{definition}
+    Niech V będzie przestrzenią liniową nad ciałem K. Podzbiór $W \subset V$ nazywamy \textbf{podprzestrzenią liniową} przestrzeni V, jeśli W również jest przestrzenią liniową nad ciałem K.
+\end{definition}
+\begin{theorem}
+    Podzbiór $W \subset V$ jest podprzestrzenią, wtedy i tylko wtedy, gdy zachodzi:
+    \begin{equation*}
+        \forall_{v_1,v_2 \in W} \, v_1 \oplus v_2 \in W
+    \end{equation*}
+    \begin{equation*}
+        \forall_{\alpha \in K, v \in W} \, \alpha\odot v \in W
+    \end{equation*}
+\end{theorem}
+\begin{theorem}
+    \label{th:czesc_wspolna_podprzestrzeni}
+    Niech V będzie przestrzenią liniową nad ciałem K, oraz niech $\{W_s\}$ będzie rodziną podprzestrzeni V. Wtedy:
+    \begin{equation*}
+        W = \bigcap_s W_s
+    \end{equation*}
+    jest podprzestrzenią liniową V.
+        \begin{proof}
+            Niech $v_1,v_2 \in W$
+            \begin{equation*}
+            v_1,v_2 \in W \Longrightarrow v_1,v_2 \in \bigcap_s W_s \Longrightarrow \forall_s v_1,v_2 \in W_s \Longrightarrow \forall_s v_1 \oplus v_2 \in W_s 
+            \end{equation*}
+            \begin{equation*}
+                \Longrightarrow v_1\oplus v_2 \in \bigcap_s W_s \Leftrightarrow v_1\oplus v_2 \in W
+            \end{equation*}
+            Niech $v \in W, \alpha \in K$
+            \begin{equation*}
+                v \in W \Longrightarrow \forall_s v \in W_s \Longrightarrow \forall_s \alpha\odot v \in W_s \Longrightarrow \alpha\odot v \in W
+            \end{equation*}
+        \end{proof}
+\end{theorem}
+\begin{definition}
+    Niech V będzie przestrzenią liniową nad ciałem K. Weźmy układ wektorów $\{v_1, \ldots, v_n\} \subset V$. Wektor
+    \begin{equation*}
+        v = \alpha_1 v_1 + \alpha_2 v_2 + \ldots + \alpha_n v_n
+    \end{equation*}
+    nazywamy \textbf{kombinacją liniową} wektorów $v_1,\ldots,v_n$.
+\end{definition}
+\begin{definition}
+    \textbf{Powłoką liniową} podzbioru $M \subset V$ (gdzie V jest przestrzenią liniową) nazywamy zbiór wszystkich kombinacji liniowych wektorów z M i oznaczamy L(M).
+\end{definition}
+\begin{theorem}
+    Niech V będzie przestrzenią liniową nad ciałem K i $M \subset V$ będzie podprzestrzenią. Powłoka liniowa L(M) jest podprzestrzenią liniową V.
+    \begin{proof}
+        \begin{equation*}
+            v_1,v_2 \in L(M) \Longrightarrow
+        \end{equation*}
+        \begin{equation*}
+            v_1 = \alpha_1 w_1 + \ldots + \alpha_n w_n, \, w_i \in M
+        \end{equation*}
+        \begin{equation*}
+            v_2 = \beta_1 u_1 + \ldots + \beta_n u_n, \, u_i \in M
+        \end{equation*}
+        \begin{equation*}
+            v_1 + v_2 = \alpha_1 w_1 + \ldots + \alpha_n w_n + \beta_1 u_1 \ldots \beta_n u_n 
+        \end{equation*}
+        zatem $v_1 + v_2$ jest kombinacją liniową wektorów $w_1,\ldots,w_n,u_1,\ldots,u_n \in M$, czyli $v_1 + v_2 \in M$.\\
+        Niech $\alpha \in K, v \in L(M), v = \alpha_1 v_1+\ldots +\alpha_n v_n$
+        \begin{equation*}
+            \alpha v = \alpha(\alpha_1 v_1+\ldots +\alpha_n v_n) = \alpha\alpha_1 v_1+\ldots + \alpha\alpha_n v_n \in L(M)
+        \end{equation*}
+    \end{proof}
+\end{theorem}
+\begin{theorem}
+    L(M) jest najmniejszą (w sensie zawierania zbiorów) podprzestrzenią V zawierającą M (jeżeli $W \subset V$ jest podprzestrzenią liniową V, taką że $M \subset W$, to $L(M) \subset W$).
+    \begin{proof}
+        Weźmy zbiór wszystkich podprzestrzeni liniowych zawierających M:
+        \begin{equation*}
+            \{W_s: s \in S\}
+        \end{equation*}
+        Niech
+        \begin{equation*}
+            \overline{W} = \bigcap_s W_s
+        \end{equation*}
+        Z twierdzenia \ref{th:czesc_wspolna_podprzestrzeni} $\overline{W}$ jest podprzestrzenią. Zauważmy: $\forall_s \overline{W} \subset W_s$. Pokażmy, że $\overline{W} = L(M)$, czyli $\overline{W} \subset L(M) \wedge L(M) \subset \overline{W}$. 
+        \begin{enumerate}
+            \item $\overline{W} \subset L(M)$. Skoro $\{W_s\}$ zawiera wszystkie podprzestrzenie zawierające M, to:
+                \begin{equation*}
+                    \exists_{s_0 \in S} W_{s_0} = L(M)
+                \end{equation*}
+            \item $L(M) \subset \overline{W}$. Niech $v \in L(M)$, wtedy:
+                \begin{equation*}
+                    v = \alpha_1 v_1 + \ldots + \alpha_n v_n, \, v_i \in M
+                \end{equation*}
+                \begin{equation*}
+                    \forall_s \, \alpha_1 v_1 + \ldots +\alpha_n v_n \in W_s \Longrightarrow \forall_s \, \alpha_1 v_1 + \ldots +\alpha_n v_n \in \bigcap_s W_s \Longrightarrow v \in \overline{W}
+                \end{equation*}
+        \end{enumerate}
+    \end{proof}
+\end{theorem}
