@@ -41,119 +41,120 @@
 \section{Rachunek zdań logicznych}
     \subsection{Ważniejsze operacje na zdaniach}
         \paragraph{Negacja}
-        Wartością negacji zdania logicznego jest wartość odwrotna do wartości tego zdania.
-        \begin{table}[h!]
-            \begin{center}
-                \caption{Negacja}
-                \label{tab:tabela1}
-                \begin{tabular}{c|c}
-                    \textbf{$p$} & \textbf{$\neg p$} \\
-                    \midrule
-                    0 & 1\\
-                    1 & 0 \\
-                    \bottomrule
-                \end{tabular}
-            \end{center}
+        Wartością negacji zdania logicznego jest wartość odwrotna do wartości tego zdania (tabela \ref{tab:negacja}).
+        \begin{table}[htbp!]
+            \centering
+            \caption{Negacja}
+            \label{tab:negacja}
+            \vspace{3mm}
+            \begin{tabular}{cc}
+                \textbf{$p$} & \textbf{$\neg p$} \\
+                \midrule
+                0 & 1\\
+                1 & 0 \\
+                \bottomrule
+            \end{tabular}
         \end{table}
 
         \paragraph{Alternatywa}
-        Alternatywa przyjmuje wartość "prawda", jeśli co najmniej jedno ze zdań jest prawdziwe.
-        \begin{table}[h!]
-            \begin{center}
-                \caption{Alternatywa}
-                \label{tab:tabela2}
-                \begin{tabular}{c|c|c}
-                    \textbf{$p$} & \textbf{$q$} & \textbf{$p \vee q$} \\
-                    \midrule
-                    0 & 0 & 0\\
-                    0 & 1 & 1\\
-                    1 & 0 & 1\\
-                    1 & 1 & 1\\
-                    \bottomrule
-                \end{tabular}
-            \end{center}
+        Alternatywa przyjmuje wartość "prawda", jeśli co najmniej jedno ze zdań jest prawdziwe (tabela \ref{tab:alternatywa}).
+        \begin{table}[htbp!]
+            \centering
+            \caption{Alternatywa}
+            \label{tab:alternatywa}
+            \vspace{3mm}
+            \begin{tabular}{ccc}
+                \textbf{$p$} & \textbf{$q$} & \textbf{$p \vee q$} \\
+                \midrule
+                0 & 0 & 0\\
+                0 & 1 & 1\\
+                1 & 0 & 1\\
+                1 & 1 & 1\\
+                \bottomrule
+            \end{tabular}
         \end{table}
 
         \paragraph{Koniunkcja}
-        Koniunkcja przyjmuje wartość "prawda", tylko jeśli oba zdania są prawdziwe.
-        \begin{table}[h!]
-            \begin{center}
-                \caption{Koniunkcja}
-                \label{tab:tabela3}
-                \begin{tabular}{c|c|c}
-                    \textbf{$p$} & \textbf{$q$} & \textbf{$p \wedge q$} \\
-                    \midrule
-                    0 & 0 & 0\\
-                    0 & 1 & 0\\
-                    1 & 0 & 0\\
-                    1 & 1 & 1\\
-                    \bottomrule
-                \end{tabular}
-            \end{center}
+        Koniunkcja przyjmuje wartość "prawda", tylko jeśli oba zdania są prawdziwe (tabela \ref{tab:koniunkcja}).
+        \begin{table}[htbp!]
+            \centering
+            \caption{Koniunkcja}
+            \label{tab:koniunkcja}
+            \vspace{3mm}
+            \begin{tabular}{ccc}
+                \textbf{$p$} & \textbf{$q$} & \textbf{$p \wedge q$} \\
+                \midrule
+                0 & 0 & 0\\
+                0 & 1 & 0\\
+                1 & 0 & 0\\
+                1 & 1 & 1\\
+                \bottomrule
+            \end{tabular}
         \end{table}
 
         \paragraph{Implikacja}
-        Implikacja ($p \Longrightarrow q$) jest prawdziwa, jeśli zarówno poprzednik ($p$) jak i następnik ($q$) są prawdziwe lub \textbf{poprzednik jest fałszywy (z fałszu wynika wszystko)}.
-        \begin{table}[h!]
-            \begin{center}
-                \caption{Implikacja}
-                \label{tab:tabela4}
-                \begin{tabular}{c|c|c}
-                    \textbf{$p$} & \textbf{$q$} & \textbf{$p \Longrightarrow q$} \\
-                    \midrule
-                    0 & 0 & 1\\
-                    0 & 1 & 1\\
-                    1 & 0 & 0\\
-                    1 & 1 & 1\\
-                    \bottomrule
-                \end{tabular}
-            \end{center}
+        Implikacja ($p \Longrightarrow q$) jest prawdziwa, jeśli zarówno poprzednik ($p$) jak i następnik ($q$) są prawdziwe lub \textbf{poprzednik jest fałszywy (z fałszu wynika wszystko)}. (tabela \ref{tab:implikacja})
+        \begin{table}[htbp!]
+            \centering
+            \caption{Implikacja}
+            \label{tab:implikacja}
+            \vspace{3mm}
+            \begin{tabular}{ccc}
+                \textbf{$p$} & \textbf{$q$} & \textbf{$p \Longrightarrow q$} \\
+                \midrule
+                0 & 0 & 1\\
+                0 & 1 & 1\\
+                1 & 0 & 0\\
+                1 & 1 & 1\\
+                \bottomrule
+            \end{tabular}
         \end{table}
         
         \paragraph{Równoważność}
-        Równoważność przyjmuje wartość "prawda" jeśli oba zdania mają tą samą wartość.
-        \begin{table}[h!]
-            \begin{center}
-                \caption{Równoważność}
-                \label{tab:tabela5}
-                \begin{tabular}{c|c|c}
-                    \textbf{$p$} & \textbf{$q$} & \textbf{$p \Leftrightarrow q$} \\
-                    \midrule
-                    0 & 0 & 1\\
-                    0 & 1 & 0\\
-                    1 & 0 & 0\\
-                    1 & 1 & 1\\
-                    \bottomrule
-                \end{tabular}
-            \end{center}
+        Równoważność przyjmuje wartość "prawda" jeśli oba zdania mają tą samą wartość (tabela \ref{tab:rownowaznosc}).
+        \begin{table}[htbp!]
+            \centering
+            \caption{Równoważność}
+            \label{tab:rownowaznosc}
+            \vspace{3mm}
+            \begin{tabular}{ccc}
+                \textbf{$p$} & \textbf{$q$} & \textbf{$p \Leftrightarrow q$} \\
+                \midrule
+                0 & 0 & 1\\
+                0 & 1 & 0\\
+                1 & 0 & 0\\
+                1 & 1 & 1\\
+                \bottomrule
+            \end{tabular}
         \end{table}
         
         \paragraph{Kreska Sheffera (NAND)}
-        Zaprzeczenie koniunkcji.
-        \begin{table}[h!]
-            \begin{center}
-                \caption{NAND}
-                \label{tab:tabela6}
-                \begin{tabular}{c|c|c}
-                    \textbf{$p$} & \textbf{$q$} & \textbf{$p \mid q$} \\
-                    \midrule
-                    0 & 0 & 1\\
-                    0 & 1 & 1\\
-                    1 & 0 & 1\\
-                    1 & 1 & 0\\
-                    \bottomrule
-                \end{tabular}
-            \end{center}
+        Zaprzeczenie koniunkcji (tabela \ref{tab:nand}).
+        \begin{table}[htbp!]
+            \centering
+            \caption{NAND}
+            \label{tab:nand}
+            \vspace{3mm}
+            \begin{tabular}{ccc}
+                \textbf{$p$} & \textbf{$q$} & \textbf{$p \mid q$} \\
+                \midrule
+                0 & 0 & 1\\
+                0 & 1 & 1\\
+                1 & 0 & 1\\
+                1 & 1 & 0\\
+                \bottomrule
+            \end{tabular}
         \end{table}
         
         \paragraph{NOR}
-        Zaprzeczenie alternatywy. 
-        \begin{table}[h!]
-            \begin{center}
+        Zaprzeczenie alternatywy (tabela \ref{tab:nor}). 
+        \begin{table}[htbp!]
+            \centering
                 \caption{NOR}
-                \label{tab:tabela7}
-                \begin{tabular}{c|c|c}
-                    \textbf{$p$} & \textbf{$q$} & \textbf{$p NOR q$} \\
+                \label{tab:nor}
+                \vspace{3mm}
+                \begin{tabular}{ccc}
+                    \textbf{$p$} & \textbf{$q$} & \textbf{$p\downarrow q$} \\
                     \midrule
                     0 & 0 & 1\\
                     0 & 1 & 0\\
@@ -161,7 +162,6 @@
                     1 & 1 & 0\\
                     \bottomrule
                 \end{tabular}
-            \end{center}
         \end{table}
         
         \begin{theorem}
@@ -257,7 +257,7 @@
             \setminus(\,\setminus A\,) = A
         \end{equation*}
 
-    \subsection{Relacje.}
+    \subsection{Relacje}
     \begin{definition}
         Relacją nazywa się dowolny podzbiór iloczynu kartezjańskiego skończonej liczby zbiorów.
     \end{definition}
